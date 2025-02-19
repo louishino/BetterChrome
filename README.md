@@ -18,6 +18,16 @@ On 13"/11" notebooks it's a great vertical space save
    [ChromeLivetext](https://github.com/louishino/ChromeLivetext)
 ![image](https://github.com/user-attachments/assets/679f51e1-0280-4c04-b881-e29b3c95a90d)
 
+0. **Enhance Bookmark Bar Logic: Open Bookmarks and Address Bar Searches in New Tabs by Default**
+In most cases, when we open a bookmarked webpage from the bookmark bar or perform a search using the address bar, we prefer these actions to open in a new tab rather than overwrite the current one. This helps preserve the original page and avoids accidental content loss.
+
+However, Chrome still doesn’t offer a default option for opening bookmarks or address bar searches in new tabs.
+
+To address this, we’ve implemented this functionality using BetterTouchTool. The solution leverages macOS APIs to detect mouse pointer hover information. Under specific conditions, the left mouse button is remapped to act as the middle button—making it especially convenient for users without a middle mouse button or those who’d rather not hold the Command key.
+
+The specific condition is:
+hovered_element_details CONTAINS "AXRoleDescription: \"Bookmark Button\""
+
 3. **Customizable Visual Styles (Boost Feature from Arc Browser):**
    A visual CSS customization feature to adjust website appearances. For example, users could modify overly decorative fonts or busy background colors to suit their preferences.
 ![image](https://github.com/user-attachments/assets/0dd25334-7046-47b0-afa7-cf1bf08ad132)
@@ -41,10 +51,17 @@ On 13"/11" notebooks it's a great vertical space save
    [ChromeLivetext](https://github.com/louishino/ChromeLivetext)
    [ChromeLivetext](https://github.com/louishino/ChromeLivetext)
 ![image](https://github.com/user-attachments/assets/679f51e1-0280-4c04-b881-e29b3c95a90d)
-3. **可视化样式自定义功能（借鉴 Arc 浏览器的 Boost 功能）：**
+0. **改进书签栏逻辑：默认点击书签在新标签页打开,默认在新标签页打开地址框搜索的内容**
+在大多数情况下，我们打开书签栏内的收藏网页或通过地址栏搜索内容时，会希望在新标签页中打开，而不是直接覆盖当前网页。这样可以保留原有网页，避免内容丢失。然而，Chrome 至今未提供默认在新标签页打开书签和地址栏搜索结果的选项。
+
+因此，我们通过 BetterTouchTool 实现了这个功能，其原理是利用 macOS 提供的 API 来检测鼠标指针的悬停信息。在满足特定条件的情况下，将鼠标左键映射为中键（对于没有中键或不想按下 Command 键的用户特别友好）。
+
+具体条件如下：
+hovered_element_details CONTAINS "AXRoleDescription: \"书签按钮\""
+4. **可视化样式自定义功能（借鉴 Arc 浏览器的 Boost 功能）：**
    用户可以通过可视化工具自定义网页的 CSS 样式。例如，更改过于花哨的字体或繁杂的背景颜色，以优化阅读体验。
 ![image](https://github.com/user-attachments/assets/0dd25334-7046-47b0-afa7-cf1bf08ad132)
-4. **关闭全屏提醒：**
+5. **关闭全屏提醒：**
    每次切换到全屏模式时，Chrome 都会强制显示“按 ESC 退出全屏”的提示。虽然这是一个安全提醒，但谷歌未提供仅显示一次的选项，这让人感到非常烦恼。
 
 ---
